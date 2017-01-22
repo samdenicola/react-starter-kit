@@ -15,14 +15,10 @@ export default {
 
   path: '/about',
 
-  async action({ locale }) {
+  async action() {
     const data = await new Promise((resolve) => {
       require.ensure([], require => {
-        try {
-          resolve(require(`./about.${locale}.md`)); // eslint-disable-line import/no-dynamic-require
-        } catch (e) {
-          resolve(require('./about.md'));
-        }
+        resolve(require('./about.md'));
       }, 'about');
     });
 

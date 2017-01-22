@@ -10,7 +10,6 @@
 import cp from 'child_process';
 import run from './run';
 import clean from './clean';
-import extractMessages from './extractMessages';
 import copy from './copy';
 import bundle from './bundle';
 import render from './render';
@@ -22,7 +21,6 @@ import pkg from '../package.json';
  */
 async function build() {
   await run(clean);
-  await run(extractMessages);
   await run(copy);
   await run(bundle);
 
